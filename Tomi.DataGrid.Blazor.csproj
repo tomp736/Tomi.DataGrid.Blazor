@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <PackageId>Tomi.DataGrid.Blazor</PackageId>
+    <Version>1.0.0-$([System.DateTime]::UtcNow.ToString(yyyyMMdd-HHmmss))</Version>
+    <Authors>Thomas Pisula</Authors>
+    <Company>Tomi</Company>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <RepositoryUrl>https://github.com/tomp736/Tomi.DataGrid.Blazor</RepositoryUrl>
+  </PropertyGroup>
+  
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="5.0.2" />
+  </ItemGroup>
+
+</Project>

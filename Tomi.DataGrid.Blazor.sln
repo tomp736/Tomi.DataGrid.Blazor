@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tomi.DataGrid.Blazor", "Tomi.DataGrid.Blazor.csproj", "{AEE1DEB9-A78E-4486-A2C9-DAD103D30FAF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AEE1DEB9-A78E-4486-A2C9-DAD103D30FAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AEE1DEB9-A78E-4486-A2C9-DAD103D30FAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AEE1DEB9-A78E-4486-A2C9-DAD103D30FAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AEE1DEB9-A78E-4486-A2C9-DAD103D30FAF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E8553D15-D7B1-4208-A9A1-338EB87E0B21}
+	EndGlobalSection
+EndGlobal

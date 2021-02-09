@@ -1,0 +1,44 @@
+﻿@typeparam TableItem
+@inherits GridBase<GridItem<TableItem>, TableItem>
+@inject IJSRuntime JSRuntime
+
+<section style="overflow-y:scroll;">
+    <div class="table-container" style="@_tableContainerStyle">
+        <table class="table">
+            <thead>
+                <tr class="header">@GridHeader</tr>
+            </thead>
+            <tbody>
+                @foreach (var item in GridItems)
+                {
+                    if (item.Editing)
+                    {
+                        <tr>@EditRow(item)</tr>
+                    }
+                    else
+                    {
+                        <tr>@GridRow(item)</tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</section>
+@code{
+    [Parameter]
+    public string Height { get; set; }
+
+    private string _tableContainerStyle
+    {
+        get
+        {
+            string style = "";
+            if (Height != null)
+            {
+                style += $"height: {Height} !important";
+            }
+            return style;
+        }
+    }
+
+}
