@@ -1,0 +1,39 @@
+name: .NET
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+        source-url: https://nuget.pkg.github.com/tomp736/index.json
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.PUBLISH_TO_GITHUB_COM}}
+        
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build
+      run: dotnet build -c Release --no-restore
+      
+    - name: Test
+      run: dotnet test --no-build --verbosity normal
+      
+    - name: Pack
+      run: dotnet pack -c Release --no-build
+      
+    - name: PushGithub 1
+      run: dotnet nuget push ./bin/Release/*.nupkg --skip-duplicate
+      env:
+        NUGET_AUTH_TOKEN: ${{secrets.PUBLISH_TO_GITHUB_COM}}
